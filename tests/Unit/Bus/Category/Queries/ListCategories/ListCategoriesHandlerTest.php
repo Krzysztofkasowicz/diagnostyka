@@ -12,8 +12,12 @@ use Illuminate\Contracts\Cache\Store;
 use Illuminate\Database\ConnectionInterface;
 use Illuminate\Database\Query\Builder;
 use Mockery;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversFunction;
 use PHPUnit\Framework\TestCase;
 
+#[CoversMethod(ListCategoriesHandlerTest::class, 'asd')]
+#[CoversClass(ListCategoriesHandler::class)]
 class ListCategoriesHandlerTest extends TestCase
 {
     protected function setUp(): void
@@ -27,9 +31,6 @@ class ListCategoriesHandlerTest extends TestCase
         parent::tearDown();
     }
 
-    /**
-     * @covers \App\Bus\Category\Queries\ListCategories\ListCategoriesHandler::__invoke
-     */
     public function test_it_retrieves_categories_from_cache_when_available(): void
     {
         // Arrange
