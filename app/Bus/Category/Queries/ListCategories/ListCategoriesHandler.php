@@ -20,7 +20,7 @@ final readonly class ListCategoriesHandler
     }
 
     /** @return Collection<CategoryView> */
-    public function __invoke(): Collection
+    public function asd(): Collection
     {
         $categories = $this->cacheFactory->store()->rememberForever(CacheKeyEnum::CATEGORIES->value,
             function () {

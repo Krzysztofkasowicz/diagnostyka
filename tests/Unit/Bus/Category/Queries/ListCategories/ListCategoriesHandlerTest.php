@@ -27,6 +27,9 @@ class ListCategoriesHandlerTest extends TestCase
         parent::tearDown();
     }
 
+    /**
+     * @covers \App\Bus\Category\Queries\ListCategories\ListCategoriesHandler::__invoke
+     */
     public function test_it_retrieves_categories_from_cache_when_available(): void
     {
         // Arrange
